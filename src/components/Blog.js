@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BlogPreview from "./BlogPreview";
 
 function Blog() {
-    const [posts, setPosts] = useState({})
+    const [posts, setPosts] = useState()
 
     useEffect(() => {
         fetch('http://localhost:9292/posts')
@@ -11,9 +11,9 @@ function Blog() {
     }, []);
 
     console.log(posts)
-    if (!posts) {
+    if(!posts) {
         return (
-            <p>Loading Blog...</p>
+            <p>Loading...</p>
         )
     }
 
