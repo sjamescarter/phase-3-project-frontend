@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BlogPreview from "./BlogPreview";
 
 function Blog() {
     const [posts, setPosts] = useState({})
@@ -10,6 +11,11 @@ function Blog() {
     }, []);
 
     console.log(posts)
+    if (!posts) {
+        return (
+            <p>Loading Blog...</p>
+        )
+    }
 
     return (
         <div>
