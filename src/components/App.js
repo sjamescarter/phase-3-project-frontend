@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Blog from "./Blog";
+import BlogPost from "./BlogPost";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Routes>
       {/* <Route path="/" element={<Home />} /> */}
       <Route path="/read" element={<Blog />} />
+      <Route path="/read/:id" element={<BlogPost />} />
       {/* <Route path="/*" element={<Error />} /> */}
     </Routes>
     {/* <Footer></Footer> */}
