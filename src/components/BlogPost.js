@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment"
+import Error from "./Error"
 
 function BlogPost() {
     const [blogPost, setBlogPost] = useState()
+    const [error, setError] = useState(false)
+
     let params = useParams();
 
     useEffect(() => {
         fetch('http://localhost:9292/posts/' + params.id)
         .then(r => r.json())
         .then(data => setBlogPost(data))
+        .catch(error => setError(error))
     }, []);
 
+    if(error !== false) {
+        console.log(error)
+        return (
+            <h1>Looks like we can't find that one!</h1>
+        );
+    }
     if(!blogPost) {
         return (
             <p>Loading...</p>
         )
     }
 
-    console.log(blogPost.comments)
+
+    console.log()
 
     return (
         <div>
