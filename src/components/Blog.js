@@ -10,11 +10,8 @@ function Blog() {
         .then(data => setPosts(data))
     }, []);
 
-    console.log(posts)
     if(!posts) {
-        return (
-            <p>Loading...</p>
-        )
+        return <p>Loading...</p>;
     }
 
     return (
@@ -26,4 +23,4 @@ function Blog() {
     );
 }
 
-export default Blog
+export default Blog;
