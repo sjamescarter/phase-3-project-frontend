@@ -9,8 +9,6 @@ function AddPost({ onSubmit }) {
     });
 
     let navigate = useNavigate();
-
-    console.log(postData)
     
     function handleChange(e) {
         setPostData({
