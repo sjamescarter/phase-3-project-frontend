@@ -17,19 +17,12 @@ function BlogPost() {
     }, []);
 
     if(error !== false) {
-        console.log(error)
-        return (
-            <h1>Looks like we can't find that one!</h1>
-        );
+        return <Error />;
     }
+
     if(!blogPost) {
-        return (
-            <p>Loading...</p>
-        )
+        return <p>Loading...</p>;
     }
-
-
-    console.log()
 
     return (
         <div>
