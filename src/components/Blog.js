@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import BlogPreview from "./BlogPreview";
 
-function Blog() {
-    const [posts, setPosts] = useState()
+function Blog({ posts }) {
+    // const [posts, setPosts] = useState()
 
-    useEffect(() => {
-        fetch('http://localhost:9292/posts')
-        .then(r => r.json())
-        .then(data => setPosts(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:9292/posts')
+    //     .then(r => r.json())
+    //     .then(data => setPosts(data))
+    // }, []);
 
     if(!posts) {
         return <p>Loading...</p>;

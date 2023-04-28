@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function AddPost() {
+function AddPost({ onSubmit }) {
     const [postData, setPostData] = useState({
         author: "",
         title: "",
         body: ""
     });
+
+    let navigate = useNavigate();
 
     console.log(postData)
     
@@ -13,7 +16,13 @@ function AddPost() {
         setPostData({
             ...postData,
             [e.target.name]: e.target.value
-        })
+        });
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        onSubmit("/posts", postData);
+        navigate("/read");
     }
 
     return (

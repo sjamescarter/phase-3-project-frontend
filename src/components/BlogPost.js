@@ -27,7 +27,7 @@ function BlogPost() {
     return (
         <div>
             <h1>{blogPost.title}</h1>
-            <small>{blogPost.author}</small>
+            <small>{blogPost.author.toUpperCase()}</small>
             <p>{blogPost.body}</p>
             {blogPost.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} />
