@@ -31,6 +31,20 @@ function BlogPost() {
             comments: [...blogPost.comments, newComment]}))
       }
 
+    function onDelete(id) {
+        fetch('http://localhost:9292/comments/' + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(r => r.json())
+        .then(data => setBlogPost({
+            ...blogPost,
+            comments: [...blogPost.comments.filter(comment => comment.id !== data.id)]
+        }));
+    }
+
     if(error !== false) {
         return <Error />;
     }
@@ -45,7 +59,7 @@ function BlogPost() {
             <small>{blogPost.author.toUpperCase()}</small>
             <p>{blogPost.body}</p>
             {blogPost.comments.map((comment) => {
-                return <Comment key={comment.id} comment={comment} />
+                return <Comment key={comment.id} comment={comment} onDelete={onDelete} />
             })}
             <AddComment onSubmit={onSubmit} postId={blogPost.id} />
         </div>
