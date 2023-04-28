@@ -56,7 +56,7 @@ function BlogPost() {
     return (
         <div>
             <h1>{blogPost.title}</h1>
-            <small>{blogPost.author.toUpperCase()}</small>
+            <small>{blogPost.author.toUpperCase()} | {blogPost.created_at.slice(0, 10)} </small>
             <p>{blogPost.body}</p>
             {blogPost.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} onDelete={onDelete} />
