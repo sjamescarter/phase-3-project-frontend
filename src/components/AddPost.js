@@ -23,11 +23,11 @@ function AddPost({ onSubmit, post = {author: "", title: "", body: ""} }) {
         <div>
             <h2>Write</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Title: </label>
                 <input type="text" name="title" value={postData.title} onChange={handleChange} />
-                <label htmlFor="author">Author</label>
+                <label htmlFor="author">Author: </label>
                 <input type="text" name="author" value={postData.author} onChange={handleChange} />
-                <label htmlFor="body">Write</label>
+                <label htmlFor="body">Write: </label>
                 <input type="textarea" name="body" value={postData.body} onChange={handleChange} />
                 <input type="submit" value="Post" />
             </form>
