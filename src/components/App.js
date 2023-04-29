@@ -27,13 +27,21 @@ function App() {
     .then(newPost => setPosts([...posts, newPost]))
   }
 
+  function onPostDelete(id) {
+    fetch('http://localhost:9292/posts/' + id, {
+        method: "DELETE",
+    })
+    .then(r => r.json())
+    .then(data => setPosts([...posts.filter(post => post.id !== data.id)]));
+}
+
   return (
     <div>
     {/* <Header></Header> */}
     <Routes>
       {/* <Route path="/" element={<Home />} /> */}
       <Route path="/read" element={<Blog posts={posts} />} />
-      <Route path="/read/:id" element={<BlogPost />} />
+      <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} />} />
       <Route path="/write" element={<AddPost onSubmit={onSubmit} />} />
       {/* <Route path="/*" element={<Error />} /> */}
     </Routes>

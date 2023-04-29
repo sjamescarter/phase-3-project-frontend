@@ -5,7 +5,7 @@ import Error from "./Error"
 import AddComment from "./AddComment";
 import EditPost from "./EditPost";
 
-function BlogPost() {
+function BlogPost({ onPostDelete }) {
     const [blogPost, setBlogPost] = useState()
     const [error, setError] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
@@ -73,8 +73,10 @@ function BlogPost() {
         isEditing ? (
             <EditPost 
                 onEditSubmit={onEditSubmit} 
+                onPostDelete={onPostDelete}
                 setIsEditing={setIsEditing} 
                 post={{
+                    id: blogPost.id,
                     author: blogPost.author, 
                     title: blogPost.title, 
                     body: blogPost.body
