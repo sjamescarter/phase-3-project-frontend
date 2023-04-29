@@ -79,7 +79,8 @@ function BlogPost() {
                     title: blogPost.title, 
                     body: blogPost.body
                 }} 
-            />) : (
+            />
+        ) : (
             <div>
                 <h1>{blogPost.title}</h1>
                 <small>{blogPost.author.toUpperCase()} | {blogPost.created_at.slice(0, 10)} </small>
