@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
+import NavBar from "./NavBar";
 import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import AddPost from "./AddPost";
@@ -40,7 +41,9 @@ function App() {
 
   return (
     <div>
-    <Header></Header>
+    <Header>
+      <NavBar login={login} />
+    </Header>
     <Routes>
       {/* <Route path="/" element={<Home />} /> */}
       <Route path="/read" element={<Blog posts={posts} />} />
