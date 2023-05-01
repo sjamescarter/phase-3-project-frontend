@@ -5,7 +5,7 @@ import Error from "./Error"
 import AddComment from "./AddComment";
 import EditPost from "./EditPost";
 
-function BlogPost({ onPostDelete }) {
+function BlogPost({ onPostDelete, login }) {
     const [blogPost, setBlogPost] = useState()
     const [error, setError] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
@@ -87,9 +87,9 @@ function BlogPost({ onPostDelete }) {
                 <h1>{blogPost.title}</h1>
                 <small>{blogPost.author.toUpperCase()} | {blogPost.created_at.slice(0, 10)} </small>
                 <p>{blogPost.body}</p>
-                <button onClick={() => setIsEditing(!isEditing)}>edit</button>
+                {login ? <button onClick={() => setIsEditing(!isEditing)}>edit</button> : null}
                 {blogPost.comments.map((comment) => {
-                    return <Comment key={comment.id} comment={comment} onDelete={onDelete} />
+                    return <Comment key={comment.id} comment={comment} onDelete={onDelete} login={login} />
                 })}
                 <AddComment onSubmit={onSubmit} postId={blogPost.id} />
             </div>
