@@ -6,8 +6,6 @@ function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) 
 
     let navigate = useNavigate();
     
-    useEffect(() => login ? null : navigate('/login'), [login])
-
     function handleChange(e) {
         setPostData({
             ...postData,
