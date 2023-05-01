@@ -84,7 +84,7 @@ function BlogPost({ onPostDelete, login }) {
             />
         ) : (
             <div>
-                <h1>{blogPost.title}</h1>
+                <h2>{blogPost.title}</h2>
                 <small>{blogPost.author.toUpperCase()} | {blogPost.created_at.slice(0, 10)} </small>
                 <p>{blogPost.body}</p>
                 {login ? <button onClick={() => setIsEditing(!isEditing)}>edit</button> : null}
