@@ -14,7 +14,7 @@ function App() {
   const [login, setLogin] = useState(false)
 
   useEffect(() => {
-      fetch('http://localhost:9292/posts')
+      fetch(API + '/posts')
       .then(r => r.json())
       .then(data => setPosts(data))
   }, []);
@@ -32,7 +32,7 @@ function App() {
   }
 
   function onPostDelete(id) {
-    fetch('http://localhost:9292/posts/' + id, {
+    fetch(API + '/posts/' + id, {
         method: "DELETE",
     })
     .then(r => r.json())

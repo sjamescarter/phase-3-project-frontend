@@ -1,10 +1,10 @@
 import React from "react";
 
-function Dashboard() {
+function Dashboard({ setLogin }) {
     return (
         <div>
             <button>Write Post</button>
-            <button>Log Out</button>
+            <button onClick={() => setLogin(false)}>Log Out</button>
         </div>
     );
 }

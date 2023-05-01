@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) {
@@ -6,6 +6,8 @@ function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) 
 
     let navigate = useNavigate();
     
+    useEffect(() => login ? null : navigate('/login'), [login])
+
     function handleChange(e) {
         setPostData({
             ...postData,
