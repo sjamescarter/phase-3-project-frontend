@@ -1,11 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function BlogList({ posts }) {
-    console.log(posts)
+function BlogList({ post }) {
+    const navigate = useNavigate();
+
     return (
-        <div>
-            {posts.map(post => <h3>{post.title}</h3>)}
-        </div>
+        <li onClick={() => navigate('/read/' + post.id)}>{post.title}</li>
     );
 }
 

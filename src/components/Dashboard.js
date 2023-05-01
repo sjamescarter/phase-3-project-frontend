@@ -1,11 +1,14 @@
 import React from "react";
+import BlogList from "./BlogList";
 
-function Dashboard({ setLogin, children }) {
+function Dashboard({ setLogin, posts }) {
     return (
         <div>
             <button>Write Post</button>
             <button onClick={() => setLogin(false)}>Log Out</button>
-            {children}
+            <ul>
+                {posts.map(post => <BlogList key={post.id} post={post}/>)}
+            </ul>
         </div>
     );
 }

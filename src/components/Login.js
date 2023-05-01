@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Dashboard from "./Dashboard";
-import BlogList from "./BlogList";
 
 function Login({ login, setLogin, posts }) {
     const [password, setPassword] = useState("");
@@ -20,9 +19,7 @@ function Login({ login, setLogin, posts }) {
         return (
             <div>
                 <h2>Welcome back, Captain!</h2>
-                <Dashboard setLogin={setLogin}>
-                    <BlogList posts={posts} />
-                </Dashboard>
+                <Dashboard setLogin={setLogin} posts={posts} />
             </div>
         );
     }
