@@ -4,11 +4,13 @@ import Header from "./Header";
 import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import AddPost from "./AddPost";
+import Login from "./Login";
 
 const API = "http://localhost:9292"
 
 function App() {
   const [posts, setPosts] = useState()
+  const [login, setLogin] = useState(false)
 
   useEffect(() => {
       fetch('http://localhost:9292/posts')
@@ -43,6 +45,7 @@ function App() {
       {/* <Route path="/" element={<Home />} /> */}
       <Route path="/read" element={<Blog posts={posts} />} />
       <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} />} />
+      <Route path="/login" element={<Login login={login} setLogin={setLogin} />} />
       <Route path="/write" element={<AddPost onSubmit={onSubmit} />} />
       {/* <Route path="/*" element={<Error />} /> */}
     </Routes>

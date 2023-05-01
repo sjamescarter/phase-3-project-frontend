@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <div>
             <NavLink to="/read">Read</NavLink>
-            <NavLink to="/write">Write</NavLink>
+            <NavLink to="/login">Login</NavLink>
         </div>
     );
 }
