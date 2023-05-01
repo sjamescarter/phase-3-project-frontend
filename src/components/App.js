@@ -48,7 +48,7 @@ function App() {
       {/* <Route path="/" element={<Home />} /> */}
       <Route path="/read" element={<Blog posts={posts} />} />
       <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} />} />
-      <Route path="/login" element={<Login login={login} setLogin={setLogin} />} />
+      <Route path="/login" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
       <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
       {/* <Route path="/*" element={<Error />} /> */}
     </Routes>
