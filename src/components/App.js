@@ -49,7 +49,7 @@ function App() {
       <Route path="/read" element={<Blog posts={posts} />} />
       <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} />} />
       <Route path="/login" element={<Login login={login} setLogin={setLogin} />} />
-      <Route path="/write" element={<AddPost onSubmit={onSubmit} />} />
+      <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
       {/* <Route path="/*" element={<Error />} /> */}
     </Routes>
     {/* <Footer></Footer> */}

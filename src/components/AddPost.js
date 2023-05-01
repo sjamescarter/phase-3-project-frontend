@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AddPost({ onSubmit, post = {author: "", title: "", body: ""} }) {
+function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) {
     const [postData, setPostData] = useState(post);
 
     let navigate = useNavigate();
