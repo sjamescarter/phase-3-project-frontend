@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 function Login({ login, setLogin }) {
     const [password, setPassword] = useState("");
-    // const navigate = useNavigate();
 
     function handleLogin(e) {
         e.preventDefault();
         if(password === "123456") {
             setLogin(true);
-            // navigate("/write")
         }
         else {
             window.alert("Login failed!");
@@ -22,6 +20,7 @@ function Login({ login, setLogin }) {
         return (
             <div>
                 <h2>Welcome back, Captain!</h2>
+                <Dashboard />
             </div>
         );
     }
