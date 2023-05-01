@@ -28,7 +28,7 @@ function App() {
       body: JSON.stringify(data)
     })
     .then(r => r.json())
-    .then(newPost => setPosts([...posts, newPost]))
+    .then(newPost => setPosts([newPost, ...posts]))
   }
 
   function onPostDelete(id) {
