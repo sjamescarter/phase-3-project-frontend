@@ -1,14 +1,17 @@
 import React from "react";
 import BlogList from "./BlogList";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard({ setLogin, posts }) {
+    let navigate = useNavigate();
+
     return (
         <div>
-            <button>Write Post</button>
+            <button onClick={() => navigate('/write') }>Write Post</button>
             <button onClick={() => setLogin(false)}>Log Out</button>
-            <ul>
+            <div>
                 {posts.map(post => <BlogList key={post.id} post={post}/>)}
-            </ul>
+            </div>
         </div>
     );
 }
