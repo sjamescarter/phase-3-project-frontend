@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment"
-import Error from "./Error"
 import AddComment from "./AddComment";
 import EditPost from "./EditPost";
 
@@ -10,8 +9,13 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
     let id = parseInt(params.id, 10);
 
     const [blogPost, setBlogPost] = useState(posts.find(post => post.id === id))
-    const [error, setError] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
+
+    useEffect(() => {
+        setPosts([...posts
+            .filter(post => post.id !== id), blogPost]
+            .sort((a, b) => b.id - a.id))
+    }, [blogPost])
 
     function onSubmit(endpoint, data) {
         fetch('http://localhost:9292' + endpoint, {
@@ -25,7 +29,6 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
         .then(newComment => setBlogPost({
             ...blogPost,
             comments: [...blogPost.comments, newComment]}))
-        .then(setPosts([...posts.filter(post => post.id !== id), blogPost]))
     }
 
     function onEditSubmit(endpoint, data) {
@@ -37,7 +40,12 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
             body: JSON.stringify(data)
         })
         .then(r => r.json())
-        .then(updatedPost => setPosts([...posts.filter(post => post.id !== updatedPost.id), updatedPost]))
+        .then(updatedPost => setBlogPost({
+            ...blogPost, 
+            author: updatedPost.author,
+            title: updatedPost.title,
+            body: updatedPost.body
+        }))
     }
 
     function onDelete(id) {
@@ -45,18 +53,10 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
             method: "DELETE",
         })
         .then(r => r.json())
-        .then(data => setPosts({
-            ...posts,
-            comments: [...posts.comments.filter(comment => comment.id !== data.id)]
+        .then(data => setBlogPost({
+            ...blogPost,
+            comments: [...blogPost.comments.filter(comment => comment.id !== data.id)]
         }));
-    }
-
-    if(error !== false) {
-        return <Error />;
-    }
-
-    if(!blogPost) {
-        return <p>Loading...</p>;
     }
 
     return (

@@ -37,7 +37,7 @@ function App() {
     })
     .then(r => r.json())
     .then(data => setPosts([...posts.filter(post => post.id !== data.id)]));
-}
+  }
 
   return (
     <div>
