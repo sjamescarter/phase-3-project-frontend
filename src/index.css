@@ -29,6 +29,7 @@ button:hover, li:hover {
 h1 {
   color: #F1EFF0;
 }
+
 li {
   list-style: none;
   padding: 1em;
@@ -43,6 +44,14 @@ ul {
   background-image: url("./img/sky.jpeg");
   background-size: 100%;
   background-position: 0em;
+  min-width: 600px;
+}
+
+.logo {
+  background-image: url("./img/CJPlogo.png");
+  background-size: 18em;
+  background-repeat: no-repeat;
+  height: 10em;
 }
 
 .wrapper {
@@ -55,7 +64,7 @@ ul {
   color: #CCB982;
   font-weight: bold;
   font-size: 1.25em;
-  margin-right: 1em;
+  margin-left: 1em;
   text-decoration: none;
 }
 
@@ -63,6 +72,6 @@ ul {
   color: #EBEBEB;
   font-weight: bold;
   font-size: 1.25em;
-  margin-right: 1em;
+  margin-left: 1em;
   text-decoration: none;
 }

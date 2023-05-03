@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar({ login }) {
     return (
         <div>
+            <NavLink className={({ isActive }) => "nav" + (isActive ? "active" : "")} to="/">Listen</NavLink>
             <NavLink 
                 className={({ isActive }) => "nav" + (isActive ? "active" : "")} 
                 to="/read"
