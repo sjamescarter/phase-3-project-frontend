@@ -5,19 +5,13 @@ import Error from "./Error"
 import AddComment from "./AddComment";
 import EditPost from "./EditPost";
 
-function BlogPost({ onPostDelete, login }) {
-    const [blogPost, setBlogPost] = useState()
+function BlogPost({ onPostDelete, login, posts, setPosts }) {
+    let params = useParams();
+    let id = parseInt(params.id, 10);
+
+    const [blogPost, setBlogPost] = useState(posts.find(post => post.id === id))
     const [error, setError] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
-
-    let params = useParams();
-
-    useEffect(() => {
-        fetch('http://localhost:9292/posts/' + params.id)
-        .then(r => r.json())
-        .then(data => setBlogPost(data))
-        .catch(error => setError(error))
-    }, []);
 
     function onSubmit(endpoint, data) {
         fetch('http://localhost:9292' + endpoint, {
@@ -31,6 +25,7 @@ function BlogPost({ onPostDelete, login }) {
         .then(newComment => setBlogPost({
             ...blogPost,
             comments: [...blogPost.comments, newComment]}))
+        .then(setPosts([...posts.filter(post => post.id !== id), blogPost]))
     }
 
     function onEditSubmit(endpoint, data) {
@@ -42,12 +37,7 @@ function BlogPost({ onPostDelete, login }) {
             body: JSON.stringify(data)
         })
         .then(r => r.json())
-        .then(updatedPost => setBlogPost({
-            ...blogPost,
-            author: updatedPost.author,
-            title: updatedPost.title,
-            body: updatedPost.body
-        }))
+        .then(updatedPost => setPosts([...posts.filter(post => post.id !== updatedPost.id), updatedPost]))
     }
 
     function onDelete(id) {
@@ -55,9 +45,9 @@ function BlogPost({ onPostDelete, login }) {
             method: "DELETE",
         })
         .then(r => r.json())
-        .then(data => setBlogPost({
-            ...blogPost,
-            comments: [...blogPost.comments.filter(comment => comment.id !== data.id)]
+        .then(data => setPosts({
+            ...posts,
+            comments: [...posts.comments.filter(comment => comment.id !== data.id)]
         }));
     }
 
