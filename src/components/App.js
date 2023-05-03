@@ -41,18 +41,19 @@ function App() {
 
   return (
     <div>
-      {console.log(posts)}
     <Header>
       <NavBar login={login} />
     </Header>
-    <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
-      <Route path="/read" element={<Blog posts={posts} />} />
-      <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
-      <Route path="/login" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
-      <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
-      {/* <Route path="/*" element={<Error />} /> */}
-    </Routes>
+    <div className="wrapper">
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/read" element={<Blog posts={posts} />} />
+        <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
+        <Route path="/login" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
+        <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
+        {/* <Route path="/*" element={<Error />} /> */}
+      </Routes>
+    </div>
     {/* <Footer></Footer> */}
     </div>
   );

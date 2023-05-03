@@ -34,3 +34,15 @@ li {
 ul {
   padding: 1em;
 }
+
+.header {
+  background-image: url("./img/sky.jpeg");
+  background-size: 100%;
+  background-position: 0em;
+  padding: 3em;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 960px;
+}
