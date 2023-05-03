@@ -5,7 +5,7 @@ function BlogPreview({ post }) {
     let navigate = useNavigate();
 
     return (
-        <div>
+        <li>
             <h2>{post.title}</h2>
             <small>{post.author.toUpperCase()}</small>
             <br></br>
@@ -13,7 +13,7 @@ function BlogPreview({ post }) {
                 {post.body.length < 256 ? post.body : post.body.slice(0, 256) + '... '}
                 <button onClick={() => navigate("/read/" + post.id)} >see more</button>
             </p>
-        </div>
+        </li>
     )
 }
 

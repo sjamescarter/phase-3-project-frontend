@@ -1,4 +1,5 @@
 body {
+  background-color: #EBEBEB;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -25,6 +26,9 @@ button:hover, li:hover {
   cursor: pointer;
 }
 
+h1 {
+  color: #F1EFF0;
+}
 li {
   list-style: none;
   padding: 1em;
@@ -32,17 +36,33 @@ li {
 }
 
 ul {
-  padding: 1em;
+  padding: 3em;
 }
 
 .header {
   background-image: url("./img/sky.jpeg");
   background-size: 100%;
   background-position: 0em;
-  padding: 3em;
 }
 
 .wrapper {
   margin: auto;
+  padding: 3em;
   max-width: 960px;
+}
+
+.nav {
+  color: #CCB982;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+.navactive {
+  color: #EBEBEB;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-right: 1em;
+  text-decoration: none;
 }
