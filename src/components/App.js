@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import Home from "./Home";
 import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import AddPost from "./AddPost";
@@ -46,7 +47,7 @@ function App() {
     </Header>
     <div className="wrapper">
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/read" element={<Blog posts={posts} />} />
         <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
         <Route path="/login" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
