@@ -7,6 +7,7 @@ function Dashboard({ setLogin, posts }) {
 
     return (
         <div>
+            <h2>Welcome back, Captain!</h2>
             <button onClick={() => navigate('/write') }>Write Post</button>
             <button onClick={() => setLogin(false)}>Log Out</button>
             <div>

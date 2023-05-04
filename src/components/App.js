@@ -8,6 +8,7 @@ import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import AddPost from "./AddPost";
 import Login from "./Login";
+import Dashboard from "./Dashboard";
 
 const API = "http://localhost:9292"
 
@@ -52,8 +53,9 @@ function App() {
         <Route path="/listen" element={<Listen />} />
         <Route path="/read" element={<Blog posts={posts} />} />
         <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
-        <Route path="/login" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
+        <Route path="/dashboard" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
         <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
+        {/* <Route path="/dashboard" element={<Dashboard setLogin={setLogin} posts={posts} />} /> */}
         {/* <Route path="/*" element={<Error />} /> */}
       </Routes>
     </div>

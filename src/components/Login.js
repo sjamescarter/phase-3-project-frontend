@@ -16,12 +16,7 @@ function Login({ login, setLogin, posts }) {
     }
 
     if(login === true) {
-        return (
-            <div>
-                <h2>Welcome back, Captain!</h2>
-                <Dashboard setLogin={setLogin} posts={posts} />
-            </div>
-        );
+        return <Dashboard setLogin={setLogin} posts={posts} />;
     }
 
     return (
