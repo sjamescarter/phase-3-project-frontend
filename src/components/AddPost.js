@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) {
+function AddPost({ onSubmit, post = {author: "", title: "", body: ""} }) {
     const [postData, setPostData] = useState(post);
 
     let navigate = useNavigate();
@@ -28,7 +28,7 @@ function AddPost({ login, onSubmit, post = {author: "", title: "", body: ""} }) 
                 <label htmlFor="author">Author: </label>
                 <input type="text" name="author" value={postData.author} onChange={handleChange} />
                 <label htmlFor="body">Write: </label>
-                <input type="textarea" name="body" value={postData.body} onChange={handleChange} />
+                <textarea name="body" value={postData.body} onChange={handleChange} />
                 <input type="submit" value="Post" />
             </form>
         </div>

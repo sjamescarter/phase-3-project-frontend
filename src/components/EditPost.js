@@ -32,7 +32,7 @@ function EditPost({ setIsEditing, post, onEditSubmit, onPostDelete }) {
                 <label htmlFor="author">Author: </label>
                 <input type="text" name="author" value={postData.author} onChange={handleChange} />
                 <label htmlFor="body">Write: </label>
-                <input type="textarea" name="body" value={postData.body} onChange={handleChange} />
+                <textarea name="body" value={postData.body} onChange={handleChange} />
                 <input type="submit" value="Save" />
             </form>
         </div>
