@@ -24,3 +24,6 @@ post_id     integer
 created_at  timestamp
 updated_at  timestamp
 ```
+
+## Video
+Find a video walk-through of my project here: https://watch.screencastify.com/v/9jO4qTrs1O2Ri6dcziEI.
