@@ -15,9 +15,8 @@ code {
 
 button {
   background: #EBEBEB;
-  border: none;
+  border: 2px solid #ccc;
   border-radius: .5em;
-  color: #0DB2C4;
   min-width: 1em;
   margin: 0em 1em;
   padding: .5em;
