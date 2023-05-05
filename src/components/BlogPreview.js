@@ -5,13 +5,12 @@ function BlogPreview({ post }) {
     let navigate = useNavigate();
 
     return (
-        <li>
+        <li onClick={() => navigate("/read/" + post.id)}>
             <h2>{post.title}</h2>
             <small>{post.author.toUpperCase()}</small>
             <br></br>
             <p>
-                {post.body.length < 256 ? post.body : post.body.slice(0, 256) + '... '}
-                <button onClick={() => navigate("/read/" + post.id)} >see more</button>
+                {post.body.length < 256 ? post.body : post.body.slice(0, 256) + '...'}
             </p>
         </li>
     )
