@@ -10,7 +10,7 @@ function BlogPreview({ post }) {
             <small>{post.author.toUpperCase()}</small>
             <br></br>
             <p>
-                {post.body.length < 256 ? post.body : post.body.slice(0, 256) + '...'}
+                {post.body.length < 256 ? post.body : post.body.slice(0, 256) + '... see more'}
             </p>
         </li>
     )

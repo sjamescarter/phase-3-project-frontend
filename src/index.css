@@ -88,3 +88,10 @@ ul {
   margin-left: 1em;
   text-decoration: none;
 }
+
+.comment {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 0em 1em;
+  margin: 1em 0em;
+}

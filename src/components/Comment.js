@@ -2,7 +2,7 @@ import React from "react";
 
 function Comment({ comment, onDelete, login }) {
     return (
-        <div>
+        <div className="comment">
             <h4>
                 {comment.name} says
                 {login ? <button onClick={() => onDelete(comment.id)}>🗑</button> : null}
