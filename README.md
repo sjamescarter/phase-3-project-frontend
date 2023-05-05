@@ -1,6 +1,6 @@
 # Captain Jonny's Blog
 
-This project is a basic blog interface that handles full CRUD operation with a relational database. The backend for this project is written in Ruby as a Sinatra App and can be found here[https://github.com/sjamescarter/phase-3-sinatra-react-project].
+This project is a basic blog interface that handles full CRUD operation with a relational database. The backend for this project is written in Ruby as a Sinatra App and can be found here: https://github.com/sjamescarter/phase-3-sinatra-react-project.
 
 ## Database
 The database is comprised of two tables, posts and comments, that have a one to many relationship where a post has many comments. The schema is as follows:
