@@ -74,10 +74,12 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
             />
         ) : (
             <div>
-                <h2>{blogPost.title}</h2>
+                <h2>
+                    {blogPost.title}
+                    {login ? <button onClick={() => setIsEditing(!isEditing)}>edit</button> : null}
+                </h2>
                 <small>{blogPost.author.toUpperCase()} | {blogPost.created_at.slice(0, 10)} </small>
                 <p>{blogPost.body}</p>
-                {login ? <button onClick={() => setIsEditing(!isEditing)}>edit</button> : null}
                 {blogPost.comments.map((comment) => {
                     return <Comment key={comment.id} comment={comment} onDelete={onDelete} login={login} />
                 })}

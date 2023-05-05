@@ -18,8 +18,9 @@ button {
   border: none;
   border-radius: .5em;
   color: #0DB2C4;
-  padding: .5em, 1em;
   min-width: 1em;
+  margin: 1em;
+  padding: .5em;
 }
 
 button:hover, li:hover {
