@@ -58,7 +58,7 @@ function BlogPost({ onPostDelete, login, posts, setPosts }) {
             comments: [...blogPost.comments.filter(comment => comment.id !== data.id)]
         }));
     }
-
+console.log(blogPost)
     return (
         isEditing ? (
             <EditPost 

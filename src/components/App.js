@@ -44,22 +44,19 @@ function App() {
 
   return (
     <div>
-    <Header>
-      <NavBar login={login} />
-    </Header>
-    <div className="wrapper">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/listen" element={<Listen />} />
-        <Route path="/read" element={<Blog posts={posts} />} />
-        <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
-        <Route path="/dashboard" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
-        <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
-        {/* <Route path="/dashboard" element={<Dashboard setLogin={setLogin} posts={posts} />} /> */}
-        {/* <Route path="/*" element={<Error />} /> */}
-      </Routes>
-    </div>
-    {/* <Footer></Footer> */}
+      <Header>
+        <NavBar login={login} />
+      </Header>
+      <div className="wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/listen" element={<Listen />} />
+          <Route path="/read" element={<Blog posts={posts} />} />
+          <Route path="/read/:id" element={<BlogPost onPostDelete={onPostDelete} login={login} posts={posts} setPosts={setPosts} />} />
+          <Route path="/dashboard" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
+          <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
+        </Routes>
+      </div>
     </div>
   );
 }

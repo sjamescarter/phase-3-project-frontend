@@ -27,7 +27,7 @@ function AddComment({ onSubmit, postId }) {
             <label htmlFor="name">Name: </label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} />
             <label htmlFor="comment">Comment: </label>
-            <input type="textarea" name="comment" value={formData.comment} onChange={handleChange} />
+            <input type="text" name="comment" value={formData.comment} onChange={handleChange} />
             <input type="submit" value="Comment" />
         </form>
     )

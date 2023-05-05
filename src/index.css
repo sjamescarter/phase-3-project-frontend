@@ -43,10 +43,23 @@ li {
   margin: .5em;
 }
 
+input[type=text] {
+  padding: .5em;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  resize: none;
+}
+
+input[type=text]:focus, textarea:focus {
+  outline-color: #0DB2C4;
+}
+
 textarea {
   width: 100%;
-  height: 20em;
-  padding: 12px 20px;
+  height: 40em;
+  padding: 1em;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
