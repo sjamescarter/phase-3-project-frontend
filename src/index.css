@@ -19,7 +19,7 @@ button {
   border-radius: .5em;
   color: #0DB2C4;
   min-width: 1em;
-  margin: 1em;
+  margin: 0em 1em;
   padding: .5em;
 }
 
@@ -38,6 +38,7 @@ h4 {
 
 li {
   list-style: none;
+  border-radius: 4px;
   padding: 1em;
   margin: .5em;
 }
