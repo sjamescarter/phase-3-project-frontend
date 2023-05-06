@@ -8,7 +8,6 @@ import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import AddPost from "./AddPost";
 import Login from "./Login";
-import Dashboard from "./Dashboard";
 
 const API = "http://localhost:9292"
 
@@ -47,7 +46,7 @@ function App() {
       <Header>
         <NavBar login={login} />
       </Header>
-      <div className="wrapper">
+      <main className="wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/listen" element={<Listen />} />
@@ -56,7 +55,7 @@ function App() {
           <Route path="/dashboard" element={<Login login={login} setLogin={setLogin} posts={posts} />} />
           <Route path="/write" element={<AddPost login={login} onSubmit={onSubmit} />} />
         </Routes>
-      </div>
+      </main>
     </div>
   );
 }
